@@ -84,7 +84,8 @@ class DBProcessor(service.Service):
 
     def _commit(self, cur, TR):
         cur.execute('PRAGMA foreign_keys = ON;')
-
+        # add update time 
+        cur.execute('INSERT INTO update_time DEFAULT VALUES;')
         if not TR.initial:
             srvid = self.sources[TR.srcid]
         else:

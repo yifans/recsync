@@ -46,3 +46,8 @@ CREATE TABLE recinfo (
 );
 CREATE INDEX recinfo_key ON recinfo(key);
 CREATE INDEX recinfo_rec ON recinfo(rec);
+
+CREATE TABLE update_time(
+  id INTEGER PRIMARY KEY,
+  time TimeStamp NOT NULL DEFAULT (datetime('now','localtime'))
+);
